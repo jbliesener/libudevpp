@@ -9,3 +9,6 @@ target_link_libraries(udevpp_example udevpp udev)
 
 add_executable(udevpp_enumerate_example src/enumerate.cpp)
 target_link_libraries(udevpp_enumerate_example udevpp udev)
+
+add_executable(udevpp_ledflash src/ledflash.cpp)
+target_link_libraries(udevpp_ledflash udevpp udev)
