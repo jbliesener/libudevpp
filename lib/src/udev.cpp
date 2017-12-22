@@ -46,6 +46,15 @@ namespace Udev
 		return UdevMonitor(udev_monitor_new_from_netlink(handle, name));
 	}
 
+	UdevDevice Udev::device_from_syspath(std::string syspath) const
+	{
+		UdevDeviceHandle *devicep = udev_device_new_from_syspath(handle, syspath.c_str());
+		if (devicep == NULL) {
+			throw std::runtime_error((std::string("Error while creating UdevDevice from syspath, error is: ") + std::strerror(errno)).c_str());
+		}
+		return UdevDevice(devicep);
+	}
+
 	UdevEnumerate Udev::enumerate_new()
 	{
 		return UdevEnumerate(udev_enumerate_new(handle));

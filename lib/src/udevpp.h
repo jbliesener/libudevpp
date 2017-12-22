@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <cstring>
 
 namespace Udev
 {
@@ -37,6 +38,8 @@ namespace Udev
 	    * @return A {@link UdevMonitor} instance
        */
 		UdevMonitor monitor_new_from_netlink(const char *name = "udev");
+
+		UdevDevice device_from_syspath(std::string) const;
 
 		/**
 	    * Create new udev enumerator
@@ -140,6 +143,7 @@ namespace Udev
 
 		bool has_sysattr(const std::string named) const;
 		std::string get_sysattr(const std::string named) const;
+		void set_sysattr(const std::string named, const std::string value) const;
 		std::vector<std::string> get_sysattr_keys() const;
 		std::map<std::string, std::string> get_sysattr_map() const;
 
@@ -155,4 +159,5 @@ namespace Udev
 	private:
 		UdevDeviceHandle *handle;
 	};
+
 }
