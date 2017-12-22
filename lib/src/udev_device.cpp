@@ -135,6 +135,16 @@ namespace Udev
 		return std::string(value);
 	}
 
+	void UdevDevice::set_sysattr(const std::string named, const std::string value) const
+{
+		int ret = udev_device_set_sysattr_value(handle, named.c_str(), (char*)value.c_str());
+		if (ret < 0)
+		{
+			throw std::runtime_error("systemattr does not exist or could not be set to requested value (check permissions)");
+		}
+		return;
+	}
+
 	std::vector<std::string> UdevDevice::get_sysattr_keys() const
 	{
 		std::vector<std::string> keys;
