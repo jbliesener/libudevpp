@@ -174,6 +174,11 @@ namespace Udev
 				{
 					attr[std::string(udev_list_entry_get_name(entry))] = std::string(value);
 				}
+				else if (key != nullptr)
+				{
+					//must be a read-only attribute, but let's at least report its existance
+					attr[std::string(udev_list_entry_get_name(entry))] = std::string();
+                }
 			}
 		}
 
