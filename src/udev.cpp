@@ -2,7 +2,7 @@
 #include <assert.h>
 #include <string>
 
-#include "udevpp.h"
+#include "udevpp.hpp"
 
 namespace Udev
 {

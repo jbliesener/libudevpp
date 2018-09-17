@@ -1,7 +1,7 @@
 #include <iostream>
 #include <getopt.h>
 
-#include <udevpp.h>
+#include <udevpp.hpp>
 
 void print_usage()
 {
