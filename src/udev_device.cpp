@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <libudev.h>
+#include <stdexcept>
 
 #include "udevpp.hpp"
 

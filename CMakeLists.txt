@@ -13,6 +13,7 @@ set(SOURCES src/udev.cpp src/udev_enumerate.cpp src/udev_monitor.cpp src/udev_de
 add_library(udevpp ${SOURCES})
 # used to make including easier, see https://github.com/boostcon/cppnow_presentations_2017/blob/master/05-19-2017_friday/effective_cmake__daniel_pfeifer__cppnow_05-19-2017.pdf
 add_library(udevpp::udevpp ALIAS udevpp)
+target_link_libraries(udevpp PUBLIC udev)
 
 # Generate:
 #   * ${CMAKE_CURRENT_BINARY_DIR}/generated_headers/x/X_EXPORT.h with X_EXPORT

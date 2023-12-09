@@ -1,6 +1,7 @@
 #include <libudev.h>
 #include <assert.h>
 #include <string>
+#include <stdexcept>
 
 #include "udevpp.hpp"
 
